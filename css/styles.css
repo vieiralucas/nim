@@ -1,0 +1,36 @@
+.left, .right {
+    width: 300px;
+    float: left;
+}
+
+.row {
+    height: 120px;
+    width: 250px;
+    border: 2px solid #dddddd;
+    padding-top: 20px;
+}
+
+.row img {
+    display: block;
+    float: left;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.pull-right {
+    float: right;
+}
+
+button {
+    height: 20px;
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.no-border {
+    border: none;
+}
