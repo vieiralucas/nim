@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nim</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="left">
+        <div class="row">
+            <img id="stick11" src="stick.png" alt="stick">
+            <img id="stick12" src="stick.png" alt="stick">
+            <img id="stick13" src="stick.png" alt="stick">
+            <div class="pull-right">
+                <button id="remove-button-1">Remover</button>
+            </div>
+        </div>
+        <div class="row">
+            <img id="stick21" src="stick.png" alt="stick">
+            <img id="stick22" src="stick.png" alt="stick">
+            <img id="stick23" src="stick.png" alt="stick">
+            <img id="stick24" src="stick.png" alt="stick">
+            <div class="pull-right">
+                <button id="remove-button-2">Remover</button>
+            </div>
+        </div>
+        <div class="row">
+            <img id="stick31" src="stick.png" alt="stick">
+            <img id="stick32" src="stick.png" alt="stick">
+            <img id="stick33" src="stick.png" alt="stick">
+            <img id="stick34" src="stick.png" alt="stick">
+            <img id="stick35" src="stick.png" alt="stick">
+            <div class="pull-right">
+                <button id="remove-button-3">Remover</button>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="row no-border">
+            <h2 class="text-center">Vez do <span id="current-player"></span></h2>
+        </div>
+        <div class="row no-border">
+            <p>
+                Iterações totais:
+                <span id="iterations">0</span>
+            </p>
+            <p>
+                Média iterações:
+                <span id="iterations-average">0</span>
+            </p>
+            <p id="message"></p>
+        </div>
+        <div class="row no-border">
+            <button id="next-turn" disabled>Passar vez</button>
+        </div>
+    </div>
+    <div>
+        <h2>Objetivo</h2>
+        <p>
+            O objetivo desse jogo é não ser o último jogador a remover o último palito, ou seja, o jogador que remover o último palito perde.
+        </p>
+        <p>
+            O jogo termina quando não restarem mais palitos.
+        </p>
+    </div>
+
+    <script src="vendor/js/lodash.min.js"></script>
+    <script src="js/computer.js"></script>
+    <script src="js/entities.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
