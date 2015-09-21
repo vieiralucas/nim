@@ -24,7 +24,7 @@ var computer;
 var currentPlayer;
 var player = 0, computer = 1;
 var players = [player, computer];
-var turn = player; //players[Math.floor(Math.random() * players.length)];
+var turn = players[Math.floor(Math.random() * players.length)];
 
 window.onload = function() {
     stick11 = new Stick(11);
@@ -63,6 +63,10 @@ window.onload = function() {
         currentPlayer.innerHTML = 'jogador humano';
     } else {
         currentPlayer.innerHTML = 'computador';
+        setTimeout(function() {
+            computerPlayer.makeMove();
+            passToPlayer();
+        }, 1000); // waits 1 second so the player understands what is going on
     }
 
     remove1.onclick = clickFunction(1);
