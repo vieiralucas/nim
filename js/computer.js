@@ -7,16 +7,16 @@ function Computer(strategy) {
 Computer.prototype.makeMove = function() {
     var game;
 
-    if (this.strategy === 'minmax') {
+    if (this.strategy === 'minimax') {
         game = new Game(undefined, turn);
-        minmax(game);
+        minimax(game);
         drawChoice();
-    } else if (this.strategy === 'minmaxpoda') {
-        minmaxpoda();
+    } else if (this.strategy === 'minimaxpoda') {
+        minimaxpoda();
     }
 }
 
-function minmax(game) {
+function minimax(game) {
     if (game.gameOver()) {
         return score(game);
     }
@@ -26,7 +26,7 @@ function minmax(game) {
 
     for (var i = 0; i < moves.length; i++) {
         var cp = new Game(_.clone(moves[i].rows), theOther(moves[i].turn));
-        scores.push(minmax(cp));
+        scores.push(minimax(cp));
     }
 
     if (game.turn === computer) {

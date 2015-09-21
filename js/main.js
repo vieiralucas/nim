@@ -55,7 +55,7 @@ window.onload = function() {
     rButton2 = new RemoveButton(remove2, row2);
     rButton3 = new RemoveButton(remove3, row3);
 
-    computerPlayer = new Computer('minmax');
+    computerPlayer = new Computer('minimax');
 
     currentPlayer = document.getElementById('current-player');
 
