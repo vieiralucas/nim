@@ -1,3 +1,23 @@
+function Stats() {
+    this.moves = 0;
+    this.iterations = 0;
+    this.iterationsDom = document.getElementById('iterations');
+    this.iterationsAverage = document.getElementById('iterations-average');
+}
+
+Stats.prototype.increaseIterations = function() {
+    this.iterations++;
+    this.iterationsDom.innerHTML = this.iterations;
+    if (this.moves !== 0) {
+        this.iterationsAverage.innerHTML = this.iterations / this.moves;
+    }
+};
+
+Stats.prototype.increaseMoves = function() {
+    this.moves++;
+    this.iterationsAverage.innerHTML = this.iterations / this.moves;
+};
+
 function Stick(id) {
     this.dom = document.getElementById('stick' + id);
     this.removed = false;

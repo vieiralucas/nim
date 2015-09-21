@@ -1,7 +1,9 @@
 var choice;
+var stats;
 
 function Computer(strategy) {
     this.strategy = strategy;
+    stats = new Stats();
 }
 
 Computer.prototype.makeMove = function() {
@@ -11,12 +13,14 @@ Computer.prototype.makeMove = function() {
         game = new Game(undefined, turn);
         minimax(game);
         drawChoice();
+        stats.increaseMoves();
     } else if (this.strategy === 'minimaxpoda') {
         minimaxpoda();
     }
 }
 
 function minimax(game) {
+    stats.increaseIterations();
     if (game.gameOver()) {
         return score(game);
     }
