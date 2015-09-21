@@ -8,10 +8,26 @@ Stick.prototype.remove = function() {
     this.removed = true;
 };
 
+Stick.prototype.revive = function() {
+    this.dom.style.display = 'inline';
+    this.removed = false;
+};
+
 function Row(sticks) {
     this.sticks = sticks;
     this.empty = false;
 }
+
+Row.prototype.attEmpty = function() {
+    for (var i = 0; i < this.sticks.length; i++) {
+        if (!this.sticks[i].removed) {
+            this.empty = false;
+            return;
+        }
+    }
+
+    this.empty = true;
+};
 
 Row.prototype.removeStick = function() {
     if (this.empty) {
@@ -28,9 +44,7 @@ Row.prototype.removeStick = function() {
         break;
     }
 
-    if (i === this.sticks.length - 1) {
-        this.empty = true;
-    }
+    this.attEmpty();
 };
 
 function RemoveButton(dom, row) {
